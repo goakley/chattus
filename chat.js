@@ -5,6 +5,45 @@
 
 var room_id = window.location.pathname.substr(1,5);
 document.getElementsByTagName("title")[0].text = "Chattus - " + room_id;
+function parse_hash() {
+    var pairs = window.location.hash.substring(1).split("&");
+    var obj = {}, pair;
+    for (var i in pairs) {
+	if (pairs[i] == "") continue;
+	pair = pairs[i].split("=");
+	obj[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1]);
+    }
+    console.log(obj);
+    if (obj['bg']) {
+	if (is_valid_colour(obj['bg'])) {
+	    document.getElementsByTagName("body")[0].style.backgroundColor = 
+		'#' + obj['bg'];
+	}
+    }
+    if (obj['fg']) {
+	if (is_valid_colour(obj['fg'])) {
+	    document.getElementsByTagName("body")[0].style.color = 
+		'#' + obj['fg'];
+	}
+    }
+}
+parse_hash();
+
+function is_valid_colour(str) {
+    if (str.length == 6) {
+	var code;
+	for (var i = 0; i < 6; i++) {
+	    code = str.charCodeAt(i);
+	    if (!((code > 47 && code < 58) || 
+		  (code > 64 && code < 71) || 
+		  (code > 96 && code < 103)))
+		return false;
+	}
+	return true;
+    }
+    return false;
+}
+
 
 setInterval(function() {
     $.getJSON("/"+room_id+"?get_log", function(response) {
