@@ -4,15 +4,14 @@ Chattus
 Chattus is a lightweight, completely self-contained chat server and client.
 
 
-### Requirements
-The Chattus server is written in Node.js.  The server can be run as a 
-standalone executable as long as the user has a Node.js path in his/her 
-environment variable.
+## Requirements
 
-* server.js depends on the __mongodb__ Node.js driver (_npm install mongodb_)
+* MongoDB server
+* Node.js
+* Node.js mongodb driver
 
 
-### Running
+## Running
 
 server.js contains a few usage-specific variables that will need to be set 
 before running the server.  These include port and address details.
@@ -33,18 +32,21 @@ Please remember to review the terms of the License if running this on a
 production server.
 
 
-### Files
+## Files
 
-__chat.html__ -- The client-side chat page
-__chat.js__ -- The client-side chat script that interacts with 
-               the Chattus server
-__index.html__ -- The Chattus 'landing page', served whenever a non-chat page 
-                  is requested
-__server.js__ -- The Node.js server; Chattus is completely self-serving, and 
-                 the entire system is powered by this file
+__chat.html__ --- The client-side chat page
+
+__chat.js__ --- The client-side chat script that interacts with 
+                the Chattus server
+
+__index.html__ --- The Chattus 'landing page', served whenever a non-chat page 
+                   is requested
+
+__server.js__ --- The Node.js server; Chattus is completely self-serving, and 
+                  the entire system is powered by this file
 
 
-### License
+## License
 
  Copyright 2012 Glen Oakley
 
