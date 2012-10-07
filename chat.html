@@ -1,0 +1,73 @@
+<!-- Licensed under the GNU Affero General Public License
+     Users interacting with this program over a network are allowed to receive 
+     the source for this program. -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chattus - _____</title>
+    <style type="text/css">
+      body {
+      margin:0px;
+      padding:0px;
+      width:0px;
+      height:0px;
+      }
+      #messages {
+      margin:0px;
+      padding:0.5ex 0.5em;
+      width:   -moz-calc(100% - 4px - 1em);
+      width:-webkit-calc(100% - 4px - 1em);
+      width:        calc(100% - 4px - 1em);
+      height:   -moz-calc(100% - 4px - 1ex - 3ex);
+      height:-webkit-calc(100% - 4px - 1ex - 3ex);
+      height:        calc(100% - 4px - 1ex - 3ex);
+      border: 2px solid black;
+      overflow-y:scroll;
+      }
+      #messages ol {
+      list-style:none none;
+      margin:0px;
+      padding:0px;
+      }
+      #messages ol li {
+      margin:0px;
+      padding:0.25ex;
+      }
+      #form {
+      width:100%;
+      height:3ex;
+      margin:0px;
+      padding:0px;
+      }
+      #form_message {
+      width:   -moz-calc(100% - 1ex);
+      width:-webkit-calc(100% - 1ex);
+      width:        calc(100% - 1ex);
+      height:3ex;
+      border:none;
+      margin:0px;
+      margin-top:-3.1ex;
+      padding:0px 0.5ex;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="messages"></div>
+    <form id="form">
+      <input id="form_message" type="text" maxlength="255" autocomplete="off" required="true" placeholder="/name [name]" value="/name ">
+    </form>
+  </body>
+  <script type="application/javascript">
+    // FIX THE STYLING
+    window.onresize = function() {
+    var body = document.getElementsByTagName("body")[0];
+    body.style.width = "0px";
+    body.style.height = "0px";
+    body.style.width = "" + (window.innerWidth-1) + "px";
+    body.style.height = "" + (window.innerHeight-1) + "px";
+    };
+    window.onresize();
+  </script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+  <script src="/chat.js"></script>
+</html>
