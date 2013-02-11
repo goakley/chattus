@@ -62,7 +62,7 @@ setInterval(function() {
 	chat_content += '</ol>';
 	$('#messages').html(chat_content);
     });
-}, 2000);
+}, 1000);
 
 function __Chat() {
     var name = "Unnamed";

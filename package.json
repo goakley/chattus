@@ -1,0 +1,9 @@
+{
+    "name":"Chattus",
+    "version":"0.1.0",
+    "description":"A self-contained lightweight HTTP chat system",
+    "author":"Glen Oakley <goakley123@gmail.com>",
+    "dependencies": {
+	"mongodb":"*"
+    }
+}
